@@ -3,6 +3,10 @@ import pymssql
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return jsonify({"message": "Flask API is live! Use /query to send requests."})
+
 # SQL Server Configuration
 DB_CONFIG = {
     "server": "127.0.0.1",  # OR "LAPTOP-15006B58"
